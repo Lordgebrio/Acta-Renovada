@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 body {
-  background: url(../img/bg.jpg) no-repeat center center fixed;
+  background: url(/img/bg.jpg) no-repeat center center fixed;
   font-family: "Goudy Old Style", serif;
 }
 .main {
