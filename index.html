@@ -31,56 +31,95 @@
                 <option value="">Wilson Pérez</option>
               </select>
             </div>
+            <div class="item">
+              <input type="numberTi" id="IDTI" name="cedulaTi" placeholder="Cédula Ti" required />
+            </div>
           </div>
         </fieldset>
         <fieldset class="fieldset">
-          <legend>Datos Equipo</legend>
-          <div class="form-group data-equipo">
+          <legend>Características Equipo</legend>
+          <div class="form-group">
+            <div class="item">
+              <select name="tipoEquipo" id="tipoEquipo">
+                <option value="">Seleccione el Tipo</option>
+                <option value="">CPU</option>
+                <option value="">Handheld</option>
+                <option value="">Impresora</option>
+                <option value="">Impresora portátil</option>
+                <option value="">Jabra</option>
+                <option value="">Monitor</option>
+                <option value="">Portátil</option>
+                <option value="">Proyector</option>
+                <option value="">Tablet</option>
+              </select>
+            </div>
+            <div class="item">
+              <select name="marcaEquipo" id="marcaEquipo">
+                <option value="">Seleccione la Marca</option>
+                <option value="">Acer</option>
+                <option value="">Apple</option>
+                <option value="">Asus</option>
+                <option value="">Dell</option>
+                <option value="">Epson</option>
+                <option value="">HP</option>
+                <option value="">Lenovo</option>
+                <option value="">LG</option>
+                <option value="">Samsung</option>
+              </select>
+            </div>
+            <div class="item">
+              <select name="modeloEquipo" id="modeloEquipo">
+                <option value="">Seleccione el Modelo</option>
+                <option value="">Modelo 1</option>
+                <option value="">Modelo 2</option>
+                <option value="">Modelo 3</option>
+                <option value="">Modelo 4</option>
+                <option value="">Modelo 5</option>
+              </select>
+            </div>
+            <div class="item">
+              <input type="text" id="serial" name="serial" placeholder="Serial" required />
+            </div>
+            <div class="item">
+              <input type="text" id="placa" name="placa" placeholder="Placa" required />
+            </div>
             <div class="item">
               <select name="estado" id="estado">
                 <option value="">Seleccione el Estado</option>
                 <option value="">Asignación</option>
                 <option value="">Devolución</option>
-                <option value="">Prestamo</option>
               </select>
-            </div>
-            <div class="item">
-                <input type="text" id="tipoEquipo" name="tipoEquipo" placeholder="Tipo de Equipo" required />
-            </div>
-            <div class="item">
-                <input type="text" id="marcaEquipo" name="marcaEquipo" placeholder="Marca de Equipo" required />
-            </div>
-            <div class="item">
-                <input type="text" id="modeloEquipo" name="modeloEquipo" placeholder="Modelo de Equipo" required />
-            </div>
-            <div class="item">
-                <input type="text" id="serial" name="serial" placeholder="Serial" required />
-            </div>
-            <div class="item">
-                <input type="text" id="placaEquipo" name="placaEquipo" placeholder="Placa Equipo" required />
-            </div>
-            <div class="item">
-                <input type="text" id="nombreEquipo" name="nombreEquipo" placeholder="Nombre Equipo" required />
-            </div>
-            <div class="item">
-                <input type="text" id="serial" name="serial" placeholder="Serial" required />
-            </div>
-            <div class="item">
-                <input type="text" id="serial" name="serial" placeholder="Serial" required />
-            </div>
-            <div class="item">
-                <input type="text" id="serial" name="serial" placeholder="Serial" required />
-            </div>
-            <div class="item">
-                <input type="text" id="serial" name="serial" placeholder="Serial" required />
-            </div>
-            <div class="item">
-                <input type="text" id="serial" name="serial" placeholder="Serial" required />
             </div>
           </div>
         </fieldset>
         <fieldset class="fieldset">
           <legend>Accesorios</legend>
+          <div class="">
+            <div class="item">
+              <label for="cargador"><input type="checkbox" name="cargador" id="cargador">Cargador</label><br>
+            </div>
+            <div class="item">
+              <label for="mouse"><input type="checkbox" name="mouse" id="mouse">Mouse</label><br>
+            </div>
+            <div class="item">
+              <label for="teclado"><input type="checkbox" name="teclado" id="teclado">Teclado</label><br>
+            </div>
+            <div class="item">
+              <label for="morral"><input type="checkbox" name="morral" id="morral">Morral</label><br>
+            </div>
+            <div class="item">
+              <label for="forro"><input type="checkbox" name="forro" id="forro">Forro</label><br>
+            </div>
+            <div class="item">
+              <label for="base"><input type="checkbox" name="base" id="base">Base</label><br>
+            </div>
+            <div class="item">
+              <label for="baseSoporte"><input type="checkbox" name="baseSoporte" id="baseSoporte">Base Soporte</label><br>
+            </div>
+            <div class="item">
+              <label for="multipuerto"><input type="checkbox" name="multipuerto" id="multipuerto">Multipuerto USB</label><br>
+            </div>
+          </div>
         </fieldset>
         <fieldset class="fieldset">
           <legend>Fotos Evidencia</legend>
