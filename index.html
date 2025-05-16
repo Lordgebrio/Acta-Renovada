@@ -320,40 +320,52 @@
               const ctx = canvas.getContext("2d");
               let dibujando = false;
 
-              function comenzar(e) {
-                dibujando = true;
-                ctx.beginPath();
-                const pos = obtenerPosicion(e, canvas);
-                ctx.moveTo(pos.x, pos.y);
-              }
-              function dibujar(e) {
-                if (!dibujando) return;
-                const pos = obtenerPosicion(e, canvas);
-                ctx.lineTo(pos.x, pos.y);
-                ctx.stroke();
-              }
-              function terminar() {
-                dibujando = false;
-              }
-              function obtenerPosicion(e, canvas) {
+              function obtenerPosicion(e) {
                 const rect = canvas.getBoundingClientRect();
-                if (e.touches) {
+                if (e.touches && e.touches.length > 0) {
                   return {
                     x: e.touches[0].clientX - rect.left,
                     y: e.touches[0].clientY - rect.top,
                   };
+                } else if (e.changedTouches && e.changedTouches.length > 0) {
+                  return {
+                    x: e.changedTouches[0].clientX - rect.left,
+                    y: e.changedTouches[0].clientY - rect.top,
+                  };
                 } else {
                   return {
-                    x: e.offsetX,
-                    y: e.offsetY,
+                    x: e.clientX - rect.left,
+                    y: e.clientY - rect.top,
                   };
                 }
               }
+
+              function comenzar(e) {
+                dibujando = true;
+                const pos = obtenerPosicion(e);
+                ctx.beginPath();
+                ctx.moveTo(pos.x, pos.y);
+              }
+
+              function dibujar(e) {
+                if (!dibujando) return;
+                const pos = obtenerPosicion(e);
+                ctx.lineTo(pos.x, pos.y);
+                ctx.stroke();
+              }
+
+              function terminar(e) {
+                if (!dibujando) return;
+                dibujando = false;
+                ctx.closePath();
+              }
+
               // Mouse events
               canvas.addEventListener("mousedown", comenzar);
               canvas.addEventListener("mousemove", dibujar);
               canvas.addEventListener("mouseup", terminar);
               canvas.addEventListener("mouseleave", terminar);
+
               // Touch events
               canvas.addEventListener("touchstart", function (e) {
                 e.preventDefault();
@@ -365,9 +377,14 @@
               });
               canvas.addEventListener("touchend", function (e) {
                 e.preventDefault();
-                terminar();
+                terminar(e);
+              });
+              canvas.addEventListener("touchcancel", function (e) {
+                e.preventDefault();
+                terminar(e);
               });
             }
+
             function limpiarFirma(canvasId) {
               const canvas = document.getElementById(canvasId);
               const ctx = canvas.getContext("2d");
