@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 body {
-  background: url(/img/bg.jpg) no-repeat center center fixed;
+  background: url(../images/bg.jpg) no-repeat center center fixed;
   font-family: "Goudy Old Style", serif;
 }
 .main {
@@ -89,4 +89,127 @@ select::placeholder {
 select:focus {
   outline: none;
   border: 2px solid #0077b6;
+}
+
+.accesorios-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.accesorios-container .item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.accesorios-container .item label {
+  font-size: 1.2em;
+  color: #333;
+  font-style: italic;
+}
+input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+input[type="checkbox"]:checked {
+  background-color: #0076b6a4;
+  border: 1px solid #000;
+}
+input[type="checkbox"]:checked::after {
+  content: "✓";
+  color: #fff;
+  font-size: 1.2em;
+  text-align: center;
+  line-height: 15px;
+}
+
+.observaciones textarea {
+  width: 100%;
+  box-sizing: border-box;
+  resize: none;
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  font-size: 1em;
+  font-style: italic;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin-bottom: 10px;
+}
+.observaciones textarea::placeholder {
+  color: #000;
+  font-style: italic;
+  font-size: 0.9em;
+  font-weight: 100;
+}
+.observaciones textarea:focus {
+  outline: none;
+  border: 2px solid #0077b6;
+}
+
+input[type="file"] {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 0.9em;
+  font-style: italic;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.firmas-container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.firma-item {
+  flex: 1;
+  min-width: 250px;
+}
+.firma-item canvas {
+  width: 350px;
+  height: 200px;
+  border: 1px solid #ccc;
+  display: block;
+  margin-bottom: 0.5rem;
+  background: #fff;
+}
+.firma-item label {
+  font-size: 1.2em;
+  color: #333;
+  font-style: italic;
+}
+.firma-item button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #0077b6;
+  color: #fff;
+  font-size: 1em;
+  cursor: pointer;
+}
+.firma-item button:hover {
+  background-color: #005f8a;
+}
+button {
+  display: block;
+  margin: 0 auto;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #0077b6;
+  color: #fff;
+  font-size: 1em;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #005f8a;
 }
