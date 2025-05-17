@@ -218,7 +218,7 @@ button:hover {
 }
 
 /* --- RESPONSIVE DESIGN --- */
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .main {
     width: 95%;
     padding: 20px;
