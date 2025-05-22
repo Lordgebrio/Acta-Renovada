@@ -272,7 +272,6 @@ button:hover {
     margin: 10px 0 0 0;
   }
   .localizacion {
-    flex-direction: column;
     align-items: center;
   }
   .fotos-container {

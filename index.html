@@ -26,9 +26,6 @@
             <div class="item">
               <select name="nameTi" id="nameTi">
                 <option value="">Seleccione el Técnico</option>
-                <option value="">Michel Salazar</option>
-                <option value="">Harold Hurtado</option>
-                <option value="">Wilson Pérez</option>
               </select>
             </div>
             <div class="item">
@@ -42,39 +39,16 @@
             <div class="item">
               <select name="tipoEquipo" id="tipoEquipo">
                 <option value="">Seleccione el Tipo</option>
-                <option value="">CPU</option>
-                <option value="">Handheld</option>
-                <option value="">Impresora</option>
-                <option value="">Impresora portátil</option>
-                <option value="">Jabra</option>
-                <option value="">Monitor</option>
-                <option value="">Portátil</option>
-                <option value="">Proyector</option>
-                <option value="">Tablet</option>
               </select>
             </div>
             <div class="item">
               <select name="marcaEquipo" id="marcaEquipo">
                 <option value="">Seleccione la Marca</option>
-                <option value="">Acer</option>
-                <option value="">Apple</option>
-                <option value="">Asus</option>
-                <option value="">Dell</option>
-                <option value="">Epson</option>
-                <option value="">HP</option>
-                <option value="">Lenovo</option>
-                <option value="">LG</option>
-                <option value="">Samsung</option>
               </select>
             </div>
             <div class="item">
               <select name="modeloEquipo" id="modeloEquipo">
                 <option value="">Seleccione el Modelo</option>
-                <option value="">Modelo 1</option>
-                <option value="">Modelo 2</option>
-                <option value="">Modelo 3</option>
-                <option value="">Modelo 4</option>
-                <option value="">Modelo 5</option>
               </select>
             </div>
             <div class="item">
@@ -86,8 +60,6 @@
             <div class="item">
               <select name="estado" id="estado">
                 <option value="">Seleccione el Estado</option>
-                <option value="">Asignación</option>
-                <option value="">Devolución</option>
               </select>
             </div>
           </div>
@@ -97,7 +69,7 @@
           <div class="accesorios-container">
             <div class="item">
               <label for="cargador">
-                <input type="checkbox" name="cargador" id="cargador" />
+                <input type="checkbox" name="cargador" id="cargador" checked />
                 Cargador
               </label>
               <br />
@@ -153,26 +125,26 @@
             </div>
           </div>
         </fieldset>
-        <fieldset class="fieldset accesorios">
-          <legend>Accesorios</legend>
+        <fieldset class="fieldset">
+          <legend>Programas</legend>
           <div class="accesorios-container">
             <div class="item">
               <label for="office">
-                <input type="checkbox" name="office" id="office" />
+                <input type="checkbox" name="office" id="office" checked />
                 Office
               </label>
               <br />
             </div>
             <div class="item">
               <label for="antivirus">
-                <input type="checkbox" name="antivirus" id="antivirus" />
+                <input type="checkbox" name="antivirus" id="antivirus" checked />
                 Antivirus
               </label>
               <br />
             </div>
             <div class="item">
               <label for="impresora">
-                <input type="checkbox" name="impresora" id="impresora" />
+                <input type="checkbox" name="impresora" id="impresora" checked />
                 Impresora
               </label>
               <br />
@@ -186,21 +158,21 @@
             </div>
             <div class="item">
               <label for="google">
-                <input type="checkbox" name="google" id="google" />
+                <input type="checkbox" name="google" id="google" checked />
                 Google Chrome
               </label>
               <br />
             </div>
             <div class="item">
               <label for="winrar">
-                <input type="checkbox" name="winrar" id="winrar" />
+                <input type="checkbox" name="winrar" id="winrar" checked />
                 WinRAR
               </label>
               <br />
             </div>
             <div class="item">
               <label for="adobe">
-                <input type="checkbox" name="adobe" id="adobe" />
+                <input type="checkbox" name="adobe" id="adobe" checked />
                 Adobe Reader
               </label>
               <br />
@@ -214,7 +186,7 @@
             </div>
             <div class="item">
               <label for="sapgui">
-                <input type="checkbox" name="sapgui" id="sapgui" />
+                <input type="checkbox" name="sapgui" id="sapgui" checked />
                 SAP GUI
               </label>
               <br />
@@ -228,21 +200,21 @@
             </div>
             <div class="item">
               <label for="7zip">
-                <input type="checkbox" name="7zip" id="7zip" />
+                <input type="checkbox" name="7zip" id="7zip" checked />
                 7-Zip
               </label>
               <br />
             </div>
             <div class="item">
               <label for="forticlient">
-                <input type="checkbox" name="forticlient" id="forticlient" />
+                <input type="checkbox" name="forticlient" id="forticlient" checked />
                 forticlient
               </label>
               <br />
             </div>
             <div class="item">
               <label for="teamviewer">
-                <input type="checkbox" name="teamviewer" id="teamviewer" />
+                <input type="checkbox" name="teamviewer" id="teamviewer" checked />
                 TeamViewer
               </label>
               <br />
@@ -285,11 +257,6 @@
             <div class="item">
               <select name="Ciudad" id="ciudad">
                 <option value="">Seleccione la Ciudad</option>
-                <option value="">Bogotá</option>
-                <option value="">Cali</option>
-                <option value="">Medellín</option>
-                <option value="">Barranquilla</option>
-                <option value="">Cartagena</option>
               </select>
             </div>
             <div class="item">
@@ -314,88 +281,11 @@
               <button type="button" onclick="limpiarFirma('firmaTecnico')">Limpiar</button>
             </div>
           </div>
-          <script>
-            function firmaCanvas(canvasId) {
-              const canvas = document.getElementById(canvasId);
-              const ctx = canvas.getContext("2d");
-              let dibujando = false;
-
-              function obtenerPosicion(e) {
-                const rect = canvas.getBoundingClientRect();
-                if (e.touches && e.touches.length > 0) {
-                  return {
-                    x: e.touches[0].clientX - rect.left,
-                    y: e.touches[0].clientY - rect.top,
-                  };
-                } else if (e.changedTouches && e.changedTouches.length > 0) {
-                  return {
-                    x: e.changedTouches[0].clientX - rect.left,
-                    y: e.changedTouches[0].clientY - rect.top,
-                  };
-                } else {
-                  return {
-                    x: e.clientX - rect.left,
-                    y: e.clientY - rect.top,
-                  };
-                }
-              }
-
-              function comenzar(e) {
-                dibujando = true;
-                const pos = obtenerPosicion(e);
-                ctx.beginPath();
-                ctx.moveTo(pos.x, pos.y);
-              }
-
-              function dibujar(e) {
-                if (!dibujando) return;
-                const pos = obtenerPosicion(e);
-                ctx.lineTo(pos.x, pos.y);
-                ctx.stroke();
-              }
-
-              function terminar(e) {
-                if (!dibujando) return;
-                dibujando = false;
-                ctx.closePath();
-              }
-
-              // Mouse events
-              canvas.addEventListener("mousedown", comenzar);
-              canvas.addEventListener("mousemove", dibujar);
-              canvas.addEventListener("mouseup", terminar);
-              canvas.addEventListener("mouseleave", terminar);
-
-              // Touch events
-              canvas.addEventListener("touchstart", function (e) {
-                e.preventDefault();
-                comenzar(e);
-              });
-              canvas.addEventListener("touchmove", function (e) {
-                e.preventDefault();
-                dibujar(e);
-              });
-              canvas.addEventListener("touchend", function (e) {
-                e.preventDefault();
-                terminar(e);
-              });
-              canvas.addEventListener("touchcancel", function (e) {
-                e.preventDefault();
-                terminar(e);
-              });
-            }
-
-            function limpiarFirma(canvasId) {
-              const canvas = document.getElementById(canvasId);
-              const ctx = canvas.getContext("2d");
-              ctx.clearRect(0, 0, canvas.width, canvas.height);
-            }
-            firmaCanvas("firmaUsuario");
-            firmaCanvas("firmaTecnico");
-          </script>
         </fieldset>
         <button type="button">Enviar</button>
       </form>
     </main>
+    <script src="js/firmas.js"></script>
+    <script src="js/listas.js"></script>
   </body>
 </html>
