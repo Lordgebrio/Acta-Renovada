@@ -1,7 +1,7 @@
 const { PDFDocument } = window.PDFLib;
 
 async function llenarPDFConDatosPersonales() {
-  const url = "../template.pdf";
+  const url = "template.pdf";
   const existingPdfBytes = await fetch(url).then((res) => res.arrayBuffer());
 
   const pdfDoc = await PDFDocument.load(existingPdfBytes);
