@@ -110,15 +110,15 @@
               <br />
             </div>
             <div class="item">
-              <label for="baseSoporte">
-                <input type="checkbox" name="baseSoporte" id="baseSoporte" />
+              <label for="soporte">
+                <input type="checkbox" name="soporte" id="soporte" />
                 Base Soporte
               </label>
               <br />
             </div>
             <div class="item">
-              <label for="multipuerto">
-                <input type="checkbox" name="multipuerto" id="multipuerto" />
+              <label for="usb">
+                <input type="checkbox" name="usb" id="usb" />
                 Multipuerto USB
               </label>
               <br />
@@ -199,8 +199,8 @@
               <br />
             </div>
             <div class="item">
-              <label for="7zip">
-                <input type="checkbox" name="7zip" id="7zip" checked />
+              <label for="zip">
+                <input type="checkbox" name="zip" id="zip" checked />
                 7-Zip
               </label>
               <br />
@@ -239,15 +239,15 @@
           <div class="fotos-container">
             <div class="item">
               <label for="fileUpload">Equipo Encendido</label>
-              <input type="file" id="fileUpload" />
+              <input type="file" id="signature" accept="image/png, image/jpeg, image/jpg" />
             </div>
             <div class="item">
               <label for="fileUpload">Frontal</label>
-              <input type="file" name="Frontal" id="frontal" />
+              <input type="file" name="Frontal" id="signature2" accept="image/png, image/jpeg, image/jpg" />
             </div>
             <div class="item">
               <label for="fileUpload">Posterior</label>
-              <input type="file" name="Posterior" id="posterior" />
+              <input type="file" name="Posterior" id="signature3" accept="image/png, image/jpeg, image/jpg" />
             </div>
           </div>
         </fieldset>
@@ -260,10 +260,7 @@
               </select>
             </div>
             <div class="item">
-              <input type="number" name="dia" id="dia" placeholder="Día" />
-            </div>
-            <div class="item">
-              <input type="month" name="mes" id="mes" />
+              <input type="date" name="fecha" id="fecha" placeholder="fecha" />
             </div>
           </div>
         </fieldset>
@@ -282,9 +279,11 @@
             </div>
           </div>
         </fieldset>
-        <button type="button">Enviar</button>
+        <button type="button" id="btnEnviar">Enviar</button>
       </form>
     </main>
+    <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+    <script src="js/llenar.js"></script>
     <script src="js/firmas.js"></script>
     <script src="js/listas.js"></script>
   </body>
