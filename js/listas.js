@@ -65,7 +65,7 @@
   // Relación marcaEquipo -> modelos
   const modelosPorMarca = {
     "Dell": ["Inspiron", "Latitude", "OptiPlex", "XPS", "Vostro"],
-    "HP": ["Pavilion", "EliteBook", "ProBook", "LaserJet", "DeskJet"],
+    "HP": ["ProBook 440 G8", "ProBook 440 G9", "ProBook 440 G10", "ProBook 440 G11", "ProBook 4 G1i 14", "DeskJet"],
     "Lenovo": ["ThinkPad", "IdeaPad", "Yoga", "Legion"],
     "Acer": ["Aspire", "Predator", "Nitro", "TravelMate"],
     "Asus": ["ZenBook", "VivoBook", "ROG", "TUF"],
