@@ -176,7 +176,7 @@ async function llenarPDFConDatosPersonales() {
   }
 
   // Verifica si el checkbox "adobe" está marcado en el formulario
-  const adobeChecked = document.getElementById("winrar").checked;
+  const adobeChecked = document.getElementById("adobe").checked;
 
   if (adobeChecked) {
     form.getCheckBox("adobesi").check();
@@ -343,7 +343,14 @@ async function llenarPDFConDatosPersonales() {
   await setImageFromCanvas("firmaUsuario", "firmaUsuario");
   await setImageFromCanvas("firmaTecnico", "firmaTecnico");
 
-  const pdfBytes = await pdfDoc.save();
+  // Bloquear todos los campos del PDF para que no se puedan modificar
+  const fields = form.getFields();
+  fields.forEach((field) => {
+    field.enableReadOnly();
+  });
+
+  // Guardar el PDF con compresión
+  const pdfBytes = await pdfDoc.save({ useObjectStreams: false });
 
   // Descargar el PDF modificado con nombre personalizado
   const serialValue = document.getElementById("serial").value.trim().replace(/\s+/g, "_");
@@ -355,6 +362,76 @@ async function llenarPDFConDatosPersonales() {
   link.href = URL.createObjectURL(blob);
   link.download = `${serialValue}_${nameValue}_${estadoValue}.pdf`;
   link.click();
+
+  // Bloquear los campos del formulario HTML después de descargar
+  bloquearFormulario();
+}
+
+// Función para bloquear los campos del formulario
+function bloquearFormulario() {
+  const camposTexto = ["name", "ID", "nameTi", "IDTI", "tipoEquipo", "marcaEquipo", "modeloEquipo", "serial", "placa", "observaciones", "ciudad", "fecha"];
+
+  const checkboxes = [
+    "cargador",
+    "mouse",
+    "teclado",
+    "morral",
+    "forro",
+    "base",
+    "soporte",
+    "office",
+    "antivirus",
+    "impresora",
+    "softphone",
+    "google",
+    "winrar",
+    "adobe",
+    "foxitreader",
+    "sapgui",
+    "adobeCloud",
+    "zip",
+    "forticlient",
+    "teamviewer",
+    "sofsin",
+    "usb",
+  ];
+
+  const selects = ["estado"];
+
+  const fileInputs = ["signature", "signature2", "signature3"];
+
+  // Bloquear campos de texto
+  camposTexto.forEach((id) => {
+    const campo = document.getElementById(id);
+    if (campo) campo.disabled = true;
+  });
+
+  // Bloquear checkboxes
+  checkboxes.forEach((id) => {
+    const checkbox = document.getElementById(id);
+    if (checkbox) checkbox.disabled = true;
+  });
+
+  // Bloquear selects
+  selects.forEach((id) => {
+    const select = document.getElementById(id);
+    if (select) select.disabled = true;
+  });
+
+  // Bloquear file inputs
+  fileInputs.forEach((id) => {
+    const input = document.getElementById(id);
+    if (input) input.disabled = true;
+  });
+
+  // Cambiar estilo para indicar que está bloqueado
+  const formulario = document.querySelector("form");
+  if (formulario) {
+    formulario.style.opacity = "0.6";
+    formulario.style.pointerEvents = "none";
+  }
+
+  console.log("Formulario bloqueado exitosamente");
 }
 
 // Puedes llamar a esta función al hacer clic en el botón "Enviar"
