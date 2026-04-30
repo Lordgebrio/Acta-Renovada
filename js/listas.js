@@ -63,7 +63,7 @@ const equiposPorTipo = {
     modelosPorMarca: {
       Dell: ["Latitude 3410", "Latitude 5420", "Latitude 7420", "Inspiron 15 5000"],
       HP: ["ProBook 440 G8", "ProBook 440 G9", "ProBook 440 G10", "ProBook 440 G11", "ProBook 4 G1i 14"],
-      Lenovo: ["ThinkPad E14", "ThinkPad E15", "ThinkPad L15", "ThinkPad T14s"],
+      Lenovo: ["ThinkPad E14", "ThinkPad E15", "ThinkPad L15", "ThinkPad T14s", "ThinkPad P16v Gen 2"],
       Acer: ["Aspire 5", "TravelMate P4 14", "TravelMate P6 15"],
       Asus: ["VivoBook 15", "ZenBook 14", "ExpertBook B1"],
       Apple: ["MacBook Air M1", "MacBook Air M2", "MacBook Pro 13"],
