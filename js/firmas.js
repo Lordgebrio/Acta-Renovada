@@ -1,5 +1,7 @@
 function firmaCanvas(canvasId) {
   const canvas = document.getElementById(canvasId);
+  canvas.width = canvas.offsetWidth || 400;
+  canvas.height = canvas.offsetHeight || 200;
   const ctx = canvas.getContext("2d");
   let dibujando = false;
 

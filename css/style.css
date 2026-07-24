@@ -224,6 +224,19 @@ button:hover {
   background-color: #005f8a;
 }
 
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+/* Estados de error */
+select.error,
+input.error {
+  border: 2px solid #e53e3e;
+  background-color: #fff5f5;
+}
+
 /* --- RESPONSIVE DESIGN --- */
 @media (max-width: 1000px) {
   .main {

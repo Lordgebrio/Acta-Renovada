@@ -431,8 +431,39 @@ function bloquearFormulario() {
     formulario.style.pointerEvents = "none";
   }
 
+  function validarFormulario() {
+    const camposRequeridos = ["tecnico", "tipo", "marca", "modelo", "estado", "ciudad"];
+    let errores = [];
+
+    camposRequeridos.forEach((campo) => {
+      const el = document.getElementById(campo);
+      if (!el || !el.value) {
+        errores.push(`El campo "${campo}" es obligatorio.`);
+        el?.classList.add("error");
+      }
+    });
+
+    if (!firmaUsuario || firmaUsuario.isEmpty()) {
+      errores.push("La firma del usuario es obligatoria.");
+    }
+
+    return errores;
+  }
+
   console.log("Formulario bloqueado exitosamente");
 }
 
 // Puedes llamar a esta función al hacer clic en el botón "Enviar"
 document.getElementById("btnEnviar").addEventListener("click", llenarPDFConDatosPersonales);
+
+document.getElementById("fotoFrontal").addEventListener("change", function (e) {
+  const file = e.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+      document.getElementById("previewFrontal").src = ev.target.result;
+      document.getElementById("previewFrontal").style.display = "block";
+    };
+    reader.readAsDataURL(file);
+  }
+});

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -269,12 +269,12 @@
           <div class="firmas-container">
             <div class="firma-item">
               <label for="firmaUsuario">Firma Usuario</label>
-              <canvas id="firmaUsuario"></canvas>
+              <canvas id="firmaUsuario" aria-label="Área de firma del usuario" role="img" tabindex="0"></canvas>
               <button type="button" onclick="limpiarFirma('firmaUsuario')">Limpiar</button>
             </div>
             <div class="firma-item">
               <label for="firmaTecnico">Firma Técnico</label>
-              <canvas id="firmaTecnico"></canvas>
+              <canvas id="firmaTecnico" aria-label="Área de firma del técnico" role="img" tabindex="0"></canvas>
               <button type="button" onclick="limpiarFirma('firmaTecnico')">Limpiar</button>
             </div>
           </div>
