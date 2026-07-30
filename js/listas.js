@@ -66,7 +66,7 @@ const equiposPorTipo = {
       Lenovo: ["ThinkPad E14", "ThinkPad E15", "ThinkPad L15", "ThinkPad T14s", "ThinkPad P16v Gen 2"],
       Acer: ["Aspire 5", "TravelMate P4 14", "TravelMate P6 15"],
       Asus: ["VivoBook 15", "ZenBook 14", "ExpertBook B1"],
-      Apple: ["MacBook Air M1", "MacBook Air M2", "MacBook Pro 13"],
+      Apple: ["MacBook Air M1", "MacBook Air M2", "MacBook Pro m4 Pro"],
     },
   },
   Proyector: {
